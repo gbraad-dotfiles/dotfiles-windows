@@ -1,3 +1,14 @@
+# Check for admin privileges
+function Test-Admin {
+    return ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
+}
+
+if (-not (Test-Admin)) {
+    Write-Host "Script needs to be run as administrator. Restarting with elevated privileges..."
+    Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+    exit
+}
+
 function dotfiles {
     param (
         [Parameter(Mandatory=$true)]
@@ -6,8 +17,7 @@ function dotfiles {
     )
 
     # Set the dotfiles repository path to ~/.dotfiles
-    $Home = [Environment]::GetFolderPath("UserProfile")
-    $DotfilesRepo = "$Home\.dotfiles"
+    $DotfilesRepo = "$HOME\.dotfiles"
 
     function Install-Dotfiles {
         Write-Host "Installing dotfiles..."
@@ -22,8 +32,8 @@ function dotfiles {
 
         # Create symbolic links for the files
         $FilesToLink = @(
-            @{ Target = "$DotfilesRepo\Microsoft.PowerShell_profile.ps1"; Link = $PROFILE }
-            #@{ Target = "$DotfilesRepo\.someconfig"; Link = "$Home\.someconfig" }
+            @{ Target = "$DotfilesRepo\Microsoft.PowerShell_profile.ps1"; Link = $PROFILE },
+            @{ Target = "$DotfilesRepo\.someconfig"; Link = "$HOME\.someconfig" }
         )
 
         foreach ($File in $FilesToLink) {
