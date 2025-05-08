@@ -1,0 +1,50 @@
+{
+    "editor.fontFamily": "'SauceCodePro NF', 'Source Code Pro', Consolas, monospace",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.fontFamily": "'SauceCodePro NF', 'Source Code Pro', Consolas, monospace",
+    "editor.minimap.enabled": false,
+    "editor.suggestSelection": "first",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#5f00af",
+        "statusBar.noFolderBackground": "#5f00af",
+        "statusBar.debuggingBackground": "#5f00af"
+    },
+    "update.showReleaseNotes": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "explorer.confirmDelete": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "terminal.integrated.scrollback": 10000,
+    "git.autofetch": true,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "workbench.editor.showTabs": "none",
+    "window.titleBarStyle": "native",
+    "window.menuBarVisibility": "toggle",
+    "editor.inlineSuggest.enabled": true,
+    "git.openRepositoryInParentFolders": "never",
+    "editor.cursorSurroundingLines": 50,
+    "git.confirmSync": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "workbench.editor.empty.hint": "hidden",
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+    "files.autoSave": "off",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.statusBar.visible": false,
+    "editor.stickyScroll.enabled": false,
+    "git.ignoreRebaseWarning": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "workbench.layoutControl.enabled": false,
+    "workbench.activityBar.location": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "git.ignoreMissingGitWarning": true,
+    "workbench.colorTheme": "Tomorrow Night Bright"
+}
