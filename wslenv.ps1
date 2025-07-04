@@ -12,7 +12,7 @@ param(
 
 $HomeDir = $env:USERPROFILE
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$IniFile = Join-Path $HomeDir "wslbox.ini"
+$IniFile = Join-Path $HomeDir "wslenv.ini"
 
 function Parse-IniFile {
     param($Path)
